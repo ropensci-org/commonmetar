@@ -25,14 +25,14 @@ This package wraps the [commonmeta Go library](https://github.com/front-matter/c
 
 ## Setup
 
-You can install the development version of commonmetar from [GitHub](https://github.com/) with:
+You can install the development version of the commonmetar R package from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
 pak::pak("ropensci-org/commonmetar")
 ```
 
-Install commonmetar with 
+Install the commonmeta Go library with 
 
 ``` r
 commonmetar::commonmeta_install()
