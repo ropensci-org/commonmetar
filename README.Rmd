@@ -21,6 +21,8 @@ knitr::opts_chunk$set(
 
 The goal of commonmetar is to allow rOpenSci blog editors to generate a random DOI strings for rOpenSci blog posts, that [Rogue Scholar](https://rogue-scholar.org/) will then use for registration.
 
+This package wraps the [commonmeta Go library](https://github.com/front-matter/commonmeta).
+
 ## Setup
 
 You can install the development version of commonmetar from [GitHub](https://github.com/) with:

@@ -1,7 +1,9 @@
 # https://github.com/r-lib/hugodown/blob/f6f23dd74ce531a9957149fae15e92c7144abac2/R/hugo-install.R#L1
 #' Install latest version of commonmeta
 #'
-#' Downloads binary from commonmeta releases, and installs in system wide cache.
+#' Downloads binary from
+#' [commonmeta](https://github.com/front-matter/commonmeta) releases,
+#' and installs in system wide cache.
 #'
 #' @param os Operating system, one of "Linux", "Windows", "Darwin". Defaults
 #'   to current operating system.
