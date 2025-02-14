@@ -43,7 +43,18 @@ commonmeta_install <- function(os = commonmeta_os(), arch = "x86_64", force = FA
 
 
 commonmeta_installed <- function() {
-  fs::path_file(fs::dir_ls(rappdirs::user_cache_dir("commonmetar")))
+
+  if (nzchar(Sys.getenv("commonmetar.commonmeta.not.here"))) {
+    return(FALSE)
+  }
+
+  process <- try(processx::run(
+    "./commonmeta",
+    args = c("help"),
+    wd = commonmeta_home()
+  ), silent = TRUE)
+
+  !inherits(process, "try-error") && (process$status == 0)
 }
 
 commonmeta_home <- function(os = commonmeta_os(), arch = "x86_64") {
@@ -101,7 +112,7 @@ commonmeta_asset_name <- function(
 commonmeta_os <- function() {
   sysname <- tolower(Sys.info()[["sysname"]])
   switch(sysname,
-    darwin = "macOS",
+    darwin = "Darwin",
     linux = "Linux",
     windows = "Windows",
     cli::cli_abort("Unknown operating system; please set `os`")
