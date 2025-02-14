@@ -16,5 +16,7 @@ A random DOI string
 Generate random DOI string
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 commonmeta_doi()
+\dontshow{\}) # examplesIf}
 }
