@@ -33,7 +33,7 @@ pak::pak("ropensci-org/commonmetar")
 Install commonmetar with 
 
 ``` r
-commonmetar::install_commonmeta()
+commonmetar::commonmeta_install()
 ``` 
 
 ## Example

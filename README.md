@@ -25,7 +25,7 @@ pak::pak("ropensci-org/commonmetar")
 Install commonmetar with
 
 ``` r
-commonmetar::install_commonmeta()
+commonmetar::commonmeta_install()
 ```
 
 ## Example
@@ -35,5 +35,5 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(commonmetar)
 commonmeta_doi()
-#> [1] "https://doi.org/10.59350/tnx7y-c6h11"
+#> [1] "https://doi.org/10.59350/5ewjk-k3d28"
 ```
