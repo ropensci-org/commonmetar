@@ -13,3 +13,5 @@ Imports:
     fs,
     gh,
     rlang
+URL: https://github.com/maelle/commonmetar
+BugReports: https://github.com/maelle/commonmetar/issues
