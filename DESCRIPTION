@@ -10,7 +10,7 @@ Authors@R: c(
 Description: Uses the commonmeta Go library to generate random DOI
     strings.
 License: MIT + file LICENSE
-URL: https://github.com/maelle/commonmetar
+URL: https://docs.ropensci.org/commonmetar/, https://github.com/maelle/commonmetar
 BugReports: https://github.com/maelle/commonmetar/issues
 Imports: 
     cli,
