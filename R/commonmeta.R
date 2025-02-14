@@ -16,12 +16,11 @@ commonmeta_doi <- function(prefix = "10.59350") {
     ))
   }
 
-  # TODO: check this works on windows
-    process <- processx::run(
-      "./commonmeta",
-      args = c("encode", prefix),
-      wd = commonmeta_home()
-    )
+  process <- processx::run(
+    "./commonmeta", # nolint: nonportable_path_linter
+    args = c("encode", prefix),
+    wd = commonmeta_home()
+  )
 
   trimws(process[["stderr"]])
 }

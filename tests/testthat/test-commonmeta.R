@@ -5,6 +5,6 @@ test_that("commonmeta_doi() works", {
 })
 
 test_that("commonmeta_doi() errors well", {
-  withr::local_envvar("commonmetar.commonmeta.not.here" = "yay")
+  withr::local_envvar(commonmetar.commonmeta.not.here = "yay")
   expect_snapshot_error(commonmeta_doi())
 })
