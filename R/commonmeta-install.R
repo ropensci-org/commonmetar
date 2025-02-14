@@ -3,7 +3,7 @@
 #'
 #' Downloads binary from commonmeta releases, and installs in system wide cache.
 #'
-#' @param os Operating system, one of "Linux", "Windows", "macOS". Defaults
+#' @param os Operating system, one of "Linux", "Windows", "Darwin". Defaults
 #'   to current operating system.
 #' @param arch Architecture
 #' @param force Whether to force a re-install/trigger an update.
@@ -97,11 +97,11 @@ commonmeta_releases <- function() {
 
 commonmeta_asset_name <- function(
                             version,
-                            os = c("Linux", "Windows", "macOS"),
+                            os = c("Linux", "Windows", "Darwin"),
                             arch = "x86_64") {
 
   os <- rlang::arg_match(os)
-  ext <- switch(os, Windows = ".zip", macOS = , Linux = ".tar.gz")
+  ext <- switch(os, Windows = ".zip", Darwin = , Linux = ".tar.gz")
 
   paste0(
     "commonmeta_",

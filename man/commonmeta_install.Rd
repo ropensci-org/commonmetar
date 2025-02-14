@@ -7,7 +7,7 @@
 commonmeta_install(os = commonmeta_os(), arch = "x86_64", force = FALSE)
 }
 \arguments{
-\item{os}{Operating system, one of "Linux", "Windows", "macOS". Defaults
+\item{os}{Operating system, one of "Linux", "Windows", "Darwin". Defaults
 to current operating system.}
 
 \item{arch}{Architecture}
