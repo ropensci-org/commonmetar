@@ -38,7 +38,7 @@ commonmeta_install <- function(os = commonmeta_os(), arch = "x86_64", force = FA
     "zip" = utils::unzip(temp, exdir = home)
   )
 
-  invisible()
+  invisible(fs::path_dir(home))
 }
 
 

@@ -12,6 +12,7 @@ RoxygenNote: 7.3.2.9000
 Imports: 
     fs,
     gh,
+    processx,
     rlang
 URL: https://github.com/maelle/commonmetar
 BugReports: https://github.com/maelle/commonmetar/issues
