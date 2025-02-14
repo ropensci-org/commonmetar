@@ -1,5 +1,5 @@
 test_that("commonmeta_doi() works", {
-  skip_on_ci()
+  commonmeta_install()
   expect_type(commonmeta_doi(), "character")
   expect_equal(nchar(commonmeta_doi()), 36)
 })
