@@ -43,7 +43,7 @@ commonmeta_install <- function(os = commonmeta_os(), arch = "x86_64", force = FA
 
 
 commonmeta_installed <- function() {
-  path_file(dir_ls(rappdirs::user_cache_dir("commonmetar")))
+  fs::path_file(fs::dir_ls(rappdirs::user_cache_dir("commonmetar")))
 }
 
 commonmeta_home <- function(os = commonmeta_os(), arch = "x86_64") {
@@ -104,6 +104,6 @@ commonmeta_os <- function() {
     darwin = "macOS",
     linux = "Linux",
     windows = "Windows",
-    abort("Unknown operating system; please set `os`")
+    cli::cli_abort("Unknown operating system; please set `os`")
   )
 }
