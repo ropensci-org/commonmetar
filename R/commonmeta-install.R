@@ -6,12 +6,13 @@
 #' @param os Operating system, one of "Linux", "Windows", "macOS". Defaults
 #'   to current operating system.
 #' @param arch Architecture
+#' @param force Whether to force a re-install/trigger an update.
 #' @export
 #' @examples
 #' \dontrun{
 #' commonmeta_install()
 #' }
-commonmeta_install <- function(os = commonmeta_os(), arch = "x86_64") {
+commonmeta_install <- function(os = commonmeta_os(), arch = "x86_64", force = FALSE) {
   rlang::check_installed("gh")
 
   message("Finding release")
@@ -19,20 +20,23 @@ commonmeta_install <- function(os = commonmeta_os(), arch = "x86_64") {
 
   home <- commonmeta_home(os, arch)
   if (file.exists(home)) {
-    message("hugo " , release$version, " already installed")
-    hugo_default_inc(release$version)
-    return(invisible())
+    if (!force) {
+      message("commonmeta already installed")
+      release$version
+      return(invisible())
+    } else {
+      fs::file_delete(home)
+    }
   }
 
-  message("Downloading ", path_file(release$url), "...")
+  message("Downloading ", fs::path_file(release$url), "...")
   temp <- curl::curl_download(release$url, tempfile())
 
-  message("Installing to ", path_dir(home), "...")
-  switch(path_ext(release$url),
+  message("Installing to ", fs::path_dir(home), "...")
+  switch(fs::path_ext(release$url),
     "gz" = utils::untar(temp, exdir = home, tar = "internal"),
     "zip" = utils::unzip(temp, exdir = home)
   )
-  hugo_default_inc(release$version)
 
   invisible()
 }
