@@ -22,5 +22,16 @@ commonmeta_doi <- function(prefix = "10.59350") {
     wd = commonmeta_home()
   )
 
-  trimws(process[["stderr"]])
+  doi <- sub(
+    ".*doi\\.\\org/",
+    "",
+    trimws(process[["stderr"]])
+  )
+
+  if (rlang::is_interactive()) {
+    clipr::write_clip(doi)
+    cli::cli_alert_success("Copied {.val {doi}} to clipboard.")
+  }
+
+  doi
 }

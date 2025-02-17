@@ -14,6 +14,7 @@ URL: https://docs.ropensci.org/commonmetar/, https://github.com/maelle/commonmet
 BugReports: https://github.com/maelle/commonmetar/issues
 Imports: 
     cli,
+    clipr,
     curl,
     fs,
     gh,
