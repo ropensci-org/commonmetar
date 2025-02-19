@@ -4,18 +4,20 @@
 \alias{commonmeta_install}
 \title{Install latest version of commonmeta}
 \usage{
-commonmeta_install(os = commonmeta_os(), arch = "x86_64", force = FALSE)
+commonmeta_install(os = NULL, arch = "x86_64", force = FALSE)
 }
 \arguments{
 \item{os}{Operating system, one of "Linux", "Windows", "Darwin". Defaults
-to current operating system.}
+to current operating system. Will be guessed automatically.}
 
 \item{arch}{Architecture}
 
 \item{force}{Whether to force a re-install/trigger an update.}
 }
 \description{
-Downloads binary from commonmeta releases, and installs in system wide cache.
+Downloads binary from
+\href{https://github.com/front-matter/commonmeta}{commonmeta} releases,
+and installs in system wide cache.
 }
 \examples{
 \dontrun{

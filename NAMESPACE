@@ -2,3 +2,4 @@
 
 export(commonmeta_doi)
 export(commonmeta_install)
+importFrom(rlang,"%||%")

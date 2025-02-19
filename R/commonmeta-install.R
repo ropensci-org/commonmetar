@@ -5,8 +5,10 @@
 #' [commonmeta](https://github.com/front-matter/commonmeta) releases,
 #' and installs in system wide cache.
 #'
+#' @importFrom rlang %||%
+#'
 #' @param os Operating system, one of "Linux", "Windows", "Darwin". Defaults
-#'   to current operating system.
+#'   to current operating system. Will be guessed automatically.
 #' @param arch Architecture
 #' @param force Whether to force a re-install/trigger an update.
 #' @export
@@ -14,10 +16,12 @@
 #' \dontrun{
 #' commonmeta_install()
 #' }
-commonmeta_install <- function(os = commonmeta_os(),
+commonmeta_install <- function(os = NULL,
                                arch = "x86_64",
                                force = FALSE) {
   rlang::check_installed("gh")
+
+  os <- os %||% commonmeta_os()
 
   message("Finding release")
   release <- commonmeta_release(os, arch)
