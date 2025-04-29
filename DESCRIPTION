@@ -2,7 +2,7 @@ Package: commonmetar
 Title: Wraps Commonmeta For rOpenSci Blog's Needs
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Maëlle", "Salmon", , "msmaellesalmon@gmail.com", role = c("cre", "aut"),
+    person("Maëlle", "Salmon", , "maelle@ropensci.org", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0002-2815-0399")),
     person("rOpenSci", role = "fnd",
            comment = c("https://ropensci.org/", ROR = "019jywm96"))
